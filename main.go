@@ -1,9 +1,7 @@
 package main
 
-import (
-	"github.com/horlaarsco/bank/app"
-)
+import "fmt"
 
 func main() {
-	app.Start()
+	fmt.Println("Starting bank...")
 }
