@@ -1,4 +1,4 @@
-module github.com/horlaarsco/bank
+module github.com/horlaarsco/movies
 
 go 1.18
 
