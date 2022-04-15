@@ -3,6 +3,8 @@ package app
 import (
 	"encoding/json"
 	"net/http"
+
+	"github.com/horlaarsco/bank/service"
 )
 
 type Customer struct {
@@ -10,8 +12,12 @@ type Customer struct {
 	age  int
 }
 
-func GetAllCustomers(res http.ResponseWriter, request *http.Request) {
-	customers := []Customer{{"John", 30}, {"Jane", 25}}
+type CustomerHandlers struct {
+	service service.CustomerServive
+}
+
+func (ch *CustomerHandlers) getAllCustomers(res http.ResponseWriter, request *http.Request) {
+	customers, _ := ch.service.GetAllCustomer()
 
 	res.Header().Add("Content-Type", "application/json")
 	json.NewEncoder(res).Encode(customers)
