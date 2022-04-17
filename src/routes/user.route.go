@@ -6,6 +6,6 @@ import (
 )
 
 func UserRoutes(mux *mux.Router) {
-	mux.HandleFunc("/user", handlers.GetUser).Methods("GET")
-	mux.HandleFunc("/user", handlers.CreateUser).Methods("POST")
+	mux.HandleFunc("/users", handlers.GetUser).Methods("GET")
+	mux.HandleFunc("/users", handlers.CreateUser).Methods("POST")
 }

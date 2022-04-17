@@ -7,6 +7,7 @@ import (
 
 	"github.com/gorilla/mux"
 	"github.com/horlaarsco/bank/src/routes"
+	"github.com/horlaarsco/bank/src/utils"
 )
 
 func main() {
@@ -14,6 +15,7 @@ func main() {
 	app := mux.NewRouter()
 	routes.UserRoutes(app)
 	http.Handle("/", app)
+	app.Use(utils.LoggingMiddleware)
 
 	fmt.Printf("Server is running on port %v\n", PORT)
 	log.Fatal(http.ListenAndServe(fmt.Sprintf(":%v", PORT), app))

@@ -10,7 +10,6 @@ import (
 )
 
 func GetUser(w http.ResponseWriter, r *http.Request) {
-	w.Header().Set("Content-Type", "application/json")
 	var id uint = 1
 	var user models.IUser
 	err := models.GetUser(id, &user)
@@ -26,7 +25,6 @@ func GetUser(w http.ResponseWriter, r *http.Request) {
 }
 
 func CreateUser(w http.ResponseWriter, r *http.Request) {
-	w.Header().Set("Content-Type", "application/json")
 	var user models.IUser
 	json.NewDecoder(r.Body).Decode(&user)
 
