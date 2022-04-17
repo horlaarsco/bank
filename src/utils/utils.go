@@ -1,10 +1,6 @@
 package utils
 
 import (
-	"encoding/json"
-	"io/ioutil"
-	"net/http"
-
 	"golang.org/x/crypto/bcrypt"
 )
 
